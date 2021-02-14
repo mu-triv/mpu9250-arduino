@@ -1,7 +1,7 @@
 # Changelog
 
 ## v2.0.0
-- Updated to match our [MOU-9250](https://github.com/bolderflight/mpu9250) library for flight software
+- Updated to match our [MPU-9250](https://github.com/bolderflight/mpu9250) library for flight software
 - Updated license to MIT
 
 ## v1.0.2
