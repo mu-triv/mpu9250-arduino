@@ -67,15 +67,9 @@ class Mpu9250 {
   inline DlpfBandwidth dlpf() const {return dlpf_bandwidth_;}
   void DrdyCallback(uint8_t int_pin, void (*function)());
   bool Read();
-  inline float accel_x_mps2() const {return accel_mps2_[0];}
-  inline float accel_y_mps2() const {return accel_mps2_[1];}
-  inline float accel_z_mps2() const {return accel_mps2_[2];}
-  inline float gyro_x_radps() const {return gyro_radps_[0];}
-  inline float gyro_y_radps() const {return gyro_radps_[1];}
-  inline float gyro_z_radps() const {return gyro_radps_[2];}
-  inline float mag_x_ut() const {return mag_ut_[0];}
-  inline float mag_y_ut() const {return mag_ut_[1];}
-  inline float mag_z_ut() const {return mag_ut_[2];}
+  inline const float* accel_xyz_mps2() const {return accel_mps2_;}
+  inline const float* gyro_xyz_radps() const {return gyro_radps_;}
+  inline const float* mag_xyz_ut() const {return mag_ut_;}
   inline float die_temperature_c() const {return die_temperature_c_;}
 
  private:
