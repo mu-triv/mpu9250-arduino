@@ -44,23 +44,28 @@ void loop() {
   /* Read the sensor */
   if (imu.Read()) {
     /* Display the data */
-    Serial.print(imu.accel_x_mps2(), 6);
+    const float *xyz = imu.accel_xyz_mps2();
+    Serial.print(xyz[0], 6);
     Serial.print("\t");
-    Serial.print(imu.accel_y_mps2(), 6);
+    Serial.print(xyz[1], 6);
     Serial.print("\t");
-    Serial.print(imu.accel_z_mps2(), 6);
+    Serial.print(xyz[2], 6);
     Serial.print("\t");
-    Serial.print(imu.gyro_x_radps(), 6);
+
+    xyz = imu.gyro_xyz_radps();
+    Serial.print(xyz[0], 6);
     Serial.print("\t");
-    Serial.print(imu.gyro_y_radps(), 6);
+    Serial.print(xyz[1], 6);
     Serial.print("\t");
-    Serial.print(imu.gyro_z_radps(), 6);
+    Serial.print(xyz[2], 6);
     Serial.print("\t");
-    Serial.print(imu.mag_x_ut(), 6);
+
+    xyz = imu.mag_xyz_ut();
+    Serial.print(xyz[0], 6);
     Serial.print("\t");
-    Serial.print(imu.mag_y_ut(), 6);
+    Serial.print(xyz[1], 6);
     Serial.print("\t");
-    Serial.print(imu.mag_z_ut(), 6);
+    Serial.print(xyz[2], 6);
     Serial.print("\t");
     Serial.println(imu.die_temperature_c(), 6);
   }
