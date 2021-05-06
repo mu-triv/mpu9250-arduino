@@ -192,9 +192,7 @@ if (mpu9250.Read()) {
 ```C++
 /* Read the IMU data */
 if (mpu9250.Read()) {
-  float ax = mpu9250.accel_x_mps2();
-  float ay = mpu9250.accel_y_mps2();
-  float az = mpu9250.accel_z_mps2();
+  const float* axyz = mpu9250.accel_xyz_mps2();
 }
 ```
 
@@ -203,9 +201,7 @@ if (mpu9250.Read()) {
 ```C++
 /* Read the IMU data */
 if (mpu9250.Read()) {
-  float gx = mpu9250.gyro_x_radps();
-  float gy = mpu9250.gyro_y_radps();
-  float gz = mpu9250.gyro_z_radps();
+  const float* gxyz = mpu9250.gyro_xyz_radps();
 }
 ```
 
@@ -214,9 +210,7 @@ if (mpu9250.Read()) {
 ```C++
 /* Read the IMU data */
 if (mpu9250.Read()) {
-  float hx = mpu9250.mag_x_ut();
-  float hy = mpu9250.mag_y_ut();
-  float hz = mpu9250.mag_z_ut();
+  const float* hx = mpu9250.mag_xyz_ut();
 }
 ```
 
